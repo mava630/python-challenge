@@ -36,15 +36,15 @@ with open(file) as readfile:
 
     total_change = total_change/(months - 1)
 
-    print('\n\nFinancial Analysis')
-    print('----------------------------')
-    print("Months: " + str(months))
-    print('Total: $' + str(total))
-    print('Average  Change: $' + str(round(total_change,2)))
-    print('Greatest Increase in Profits: ' + str(inc[0]) + ' ($' + str(inc[1]) + ')')
-    print('Greatest Decrease in Profits: ' + str(dec[0]) + ' ($' + str(dec[1]) + ')')
+    output = ('\n\nFinancial Analysis'
+                '\n----------------------------'
+                "\nMonths: " + str(months) +
+                '\nTotal: $' + str(total) +
+                '\nAverage  Change: $' + str(round(total_change,2)) +
+                '\nGreatest Increase in Profits: ' + str(inc[0]) + ' ($' + str(inc[1]) + ')' +
+                '\nGreatest Decrease in Profits: ' + str(dec[0]) + ' ($' + str(dec[1]) + ')')
 
+    print(output)
 
-#    output = f'\n\nFinancial Analysis\n----------------------------\nMonths:  str(months\nTotal: $ str(total\nAverage  Change: $ str(round(total_change,2)\nGreatest Increase in Profits:  str(inc[0]  ($ str(inc[1])\nGreatest Decrease in Profits:  str(dec[0] ($ str(dec[1]'
-
-#     print(output)
+    with open(os.path.join('Analysis','Analysis.txt'),'w') as output_txt:
+        output_txt.write(output)
